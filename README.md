@@ -26,7 +26,7 @@
 ```http
   /api/authen
 ```
-#### Input
+#### Input (JSON)
 | Parameter | Type     | Description                |
 | :-------- | :------- | :------------------------- |
 | `Username` | `string` | **Tên đăng nhập**|
@@ -52,9 +52,10 @@
   /api/Isdn/GetListISDN
 ```
 
-#### Input
+#### Input (JSON)
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
+| `Bearer Token (Header)`      | `string` | **Jwt**|
 | `Identity`      | `string` | **Số CMND hoặc CCCD**|
 
 #### Output
@@ -87,9 +88,10 @@
 ```http
   /api/information/qlkh
 ```
-#### Input
+#### Input (JSON)
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
+| `Bearer Token (Header)`      | `string` | **Jwt**|
 | `PhoneNumber`      | `string` | **Số điện thoại (không bao gồm số "0"), độ dài 9 ký tự**|
 
 #### Output
@@ -112,9 +114,10 @@
 ```http
 /api/history/nap-tien
 ```
-#### Input
+#### Input (JSON)
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
+| `Bearer Token (Header)`      | `string` | **Jwt**|
 | `PhoneNumber`      | `string` | **Số điện thoại (không bao gồm số "0"), độ dài 9 ký tự**|
 
 #### Output
@@ -147,9 +150,10 @@
 ```http
 /api/history/khieu-nai
 ```
-#### Input
+#### Input (JSON)
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
+| `Bearer Token (Header)`      | `string` | **Jwt**|
 | `PhoneNumber`      | `string` | **Số điện thoại (không bao gồm số "0"), độ dài 9 ký tự**|
 
 #### Output
@@ -173,9 +177,10 @@
 ```http
 /api/revenue/monthly
 ```
-#### Input
+#### Input (JSON)
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
+| `Bearer Token (Header)`      | `string` | **Jwt**|
 | `PhoneNumber`      | `string` | **Số điện thoại (không bao gồm số "0"), độ dài 9 ký tự**|
 
 #### Output
