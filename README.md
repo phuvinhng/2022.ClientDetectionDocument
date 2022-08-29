@@ -12,7 +12,7 @@
 ```http
   POST /api/account/authen
 ```
-#### Input
+#### Input (JSON)
 | Parameter | Type     | Description                |
 | :-------- | :------- | :------------------------- |
 | `Username` | `string` | **Tên đăng nhập**|
@@ -38,7 +38,7 @@
   POST /api/Isdn/GetListISDN
 ```
 
-#### Input
+#### Input (JSON)
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
 | `Bearer Token (Header)`      | `string` | **Jwt**|
