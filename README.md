@@ -41,6 +41,7 @@
 #### Input
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
+| `Bearer Token`      | `string` | **Jwt**|
 | `Identity`      | `string` | **Số CMND hoặc CCCD**|
 
 #### Output
