@@ -20,7 +20,7 @@
 
 ## BaseUrl
 
-```https
+```http
   http://103.63.104.239/ClientDetectionApi
 ```
 
