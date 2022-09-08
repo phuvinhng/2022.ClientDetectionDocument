@@ -150,6 +150,9 @@
 | `PhoneNumber`      | `string` | **Số điện thoại (không bao gồm số "0"), độ dài 9 ký tự**|
 
 #### Output
+<details>
+  <summary>Hiển thị</summary>
+  
 ```
 {
     "IssueId": 3603563,
@@ -335,6 +338,8 @@
     "Custom000868": "DNBH68M4BC"
 }
 ```
+  
+</details>
 
 ## Lịch sử nạp tiền
 #### Giao thức: POST
