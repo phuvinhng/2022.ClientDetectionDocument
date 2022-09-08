@@ -59,7 +59,7 @@
 #### Input (JSON)
 | Parameter | Type     | Description                |
 | :-------- | :------- | :------------------------- |
-| `RefreshToken` | `string` | **Refresh Token lấy được từ API Login trước đó**|
+| `RefreshToken` | `string` | **Refresh Token lấy được từ Login API trước đó**|
 
 #### Output
 <details>
