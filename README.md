@@ -92,6 +92,9 @@
 | `Identity`      | `string` | **Số CMND hoặc CCCD**|
 
 #### Output
+<details>
+  <summary>Hiển thị</summary>
+  
 ```
 [
     {
@@ -115,6 +118,9 @@
     ...
 ]
 ```
+  
+</details>
+
 
 ## Lấy thông tin thuê bao từ QLKH
 #### Giao thức: POST
@@ -128,6 +134,9 @@
 | `PhoneNumber`      | `string` | **Số điện thoại (không bao gồm số "0"), độ dài 9 ký tự**|
 
 #### Output
+<details>
+  <summary>Hiển thị</summary>
+  
 ```
 {
     "Name": "Đinh Thị Minh Nguyệt",
@@ -141,6 +150,10 @@
     "IdIssuePlace": "DNI"
 }
 ```
+  
+</details>
+
+
 ## Lấy thông tin thuê bao từ CRM
 #### Giao thức: POST
 ```http
@@ -356,6 +369,9 @@
 | `PhoneNumber`      | `string` | **Số điện thoại (không bao gồm số "0"), độ dài 9 ký tự**|
 
 #### Output
+<details>
+  <summary>Hiển thị</summary>
+  
 ```
 [
     {
@@ -379,6 +395,9 @@
     ...
 ]
 ```
+  
+</details>
+
 
 ## Lịch sử khiếu nại
 #### Giao thức: POST
@@ -392,6 +411,9 @@
 | `PhoneNumber`      | `string` | **Số điện thoại (không bao gồm số "0"), độ dài 9 ký tự**|
 
 #### Output
+<details>
+  <summary>Hiển thị</summary>
+  
 ```
 [
     {
@@ -406,6 +428,9 @@
     ...
 ]
 ```
+  
+</details>
+
 
 ## Doanh thu Tháng
 #### Giao thức: POST
@@ -419,6 +444,9 @@
 | `PhoneNumber`      | `string` | **Số điện thoại (không bao gồm số "0"), độ dài 9 ký tự**|
 
 #### Output
+<details>
+  <summary>Hiển thị</summary>
+  
 ```
 [
     {
@@ -434,6 +462,9 @@
     ...
 ]
 ```
+  
+</details>
+
 
 ## App Platform
 #### Giao thức: POST
@@ -447,6 +478,9 @@
 | `PhoneNumber`      | `string` | **Số điện thoại (không bao gồm số "0"), độ dài 9 ký tự**|
 
 #### Output
+<details>
+  <summary>Hiển thị</summary>
+  
 ```
 [
     {
@@ -456,3 +490,6 @@
     }
 ]
 ```
+  
+</details>
+
