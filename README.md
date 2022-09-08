@@ -36,8 +36,9 @@
   <summary>Hiển thị</summary>
   
 ```
-  {
-    "Token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VyTmFtZSI6InZpbmgubnAiLCJleHAiOjE2NjE3NDMyMzIsImlzcyI6Ik1vYmlGb25lIDgiLCJhdWQiOiJNb2JpRm9uZSA4In0.W-QynIJoPElaO6QKknyHc7hmfWizlF_KgIaLZowDRY8",
+{
+    "Token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VyTmFtZSI6InZpbmgubnAiLCJleHAiOjE2NjI2NTY1OTIsImlzcyI6Ik1vYmlGb25lIDgiLCJhdWQiOiJNb2JpRm9uZSA4In0.zOMUTD8cry0H6yHu-zjQx0anI6KkQKSHIyK6yYPOFRs",
+    "RefreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VyTmFtZSI6InZpbmgubnAiLCJleHAiOjE2NjMyNTc3OTIsImlzcyI6Ik1vYmlGb25lIDgiLCJhdWQiOiJNb2JpRm9uZSA4In0.Jdvhij2cu46SPD7NV1htMGH7HAfoFsafvcFfaaLFirA",
     "UserName": "vinh.np"
 }
 ```
