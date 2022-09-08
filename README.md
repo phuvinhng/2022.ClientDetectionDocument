@@ -4,6 +4,7 @@
 ## Nội dung
 * [BaseUrl](#BaseUrl)
 * [Đăng nhập](#đăng-nhập)
+  - [RefreshToken](#refreshtoken)
 * [Lấy danh sách thuê bao](#lấy-danh-sách-thuê-bao)
 * [Thông tin thuê bao](#lấy-thông-tin-thuê-bao-từ-qlkh)
   - [Từ phân hệ QLKH](#lấy-thông-tin-thuê-bao-từ-qlkh)
