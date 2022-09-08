@@ -23,7 +23,7 @@
 ## Đăng nhập
 #### Giao thức: POST
 ```http
-  /api/authen
+  /api/account/authen
 ```
 #### Input (JSON)
 | Parameter | Type     | Description                |
@@ -49,6 +49,31 @@
 
 - Tại môi trường Dev: 
   - Sử dụng **Password** mặc định để đăng nhập: **mbf8@2022**
+
+## RefreshToken
+#### Giao thức: POST
+```http
+  /api/account/refresh-token
+```
+#### 
+#### Input (JSON)
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `RefreshToken` | `string` | **Refresh Token lấy được từ API Login trước đó**|
+
+#### Output
+<details>
+  <summary>Hiển thị</summary>
+  
+```
+{
+    "Token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VyTmFtZSI6InZpbmgubnAiLCJleHAiOjE2NjI2NTgyMTUsImlzcyI6Ik1vYmlGb25lIDgiLCJhdWQiOiJNb2JpRm9uZSA4In0.1DdacDaVHdWQZd-uDAs0njRRzqHY06MXCCf7CPXut2s",
+    "RefreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VyTmFtZSI6InZpbmgubnAiLCJleHAiOjE2NjMyNTk0MTUsImlzcyI6Ik1vYmlGb25lIDgiLCJhdWQiOiJNb2JpRm9uZSA4In0.EPh5B7fFWo2HqV4O8V4GT4ss321XW0ceLONJtmTkLyU",
+    "UserName": "vinh.np"
+}
+```
+  
+</details>
 
 ## Lấy danh sách thuê bao
 #### Giao thức: POST
