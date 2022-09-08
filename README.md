@@ -14,24 +14,6 @@
 * [Doanh thu](#doanh-thu-tháng)
   * [Theo Tháng](#doanh-thu-tháng)
 
-<details>
-  <summary>Click me</summary>
-  
-  ### Heading
-  1. Foo
-  2. Bar
-     * Baz
-     * Qux
-
-  ### Some Code
-  ```js
-  function logSomething(something) {
-    console.log('Something', something);
-  }
-  ```
-</details>
-
-
 ## BaseUrl
 
 ```http
@@ -49,14 +31,16 @@
 | `Username` | `string` | **Tên đăng nhập**|
 | `Password` | `string` | **Mật khẩu**|
 
-#### Output
+<details>
+  <summary>Hiển thị</summary>
+  #### Output
 ```
 {
     "Token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VyTmFtZSI6InZpbmgubnAiLCJleHAiOjE2NjE3NDMyMzIsImlzcyI6Ik1vYmlGb25lIDgiLCJhdWQiOiJNb2JpRm9uZSA4In0.W-QynIJoPElaO6QKknyHc7hmfWizlF_KgIaLZowDRY8",
     "UserName": "vinh.np"
 }
 ```
-
+</details>
 
 #### Lưu ý: 
 
