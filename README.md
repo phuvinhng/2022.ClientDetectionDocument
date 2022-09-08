@@ -33,14 +33,14 @@
 
 #### Output
 <details>
-  <summary>Hiển thị</summary>
+  <summary>Hiển thị
 ```
 {
     "Token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VyTmFtZSI6InZpbmgubnAiLCJleHAiOjE2NjE3NDMyMzIsImlzcyI6Ik1vYmlGb25lIDgiLCJhdWQiOiJNb2JpRm9uZSA4In0.W-QynIJoPElaO6QKknyHc7hmfWizlF_KgIaLZowDRY8",
     "UserName": "vinh.np"
 }
 ```
-  <summary>Hiển thị</summary>
+  </summary>
 </details>
 
 #### Lưu ý: 
