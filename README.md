@@ -13,7 +13,9 @@
   - [Nạp tiền](#lịch-sử-nạp-tiền)
   - [Khiếu Nại](#lịch-sử-khiếu-nại)
 * [Doanh thu](#doanh-thu-tháng)
-  * [Theo Tháng](#doanh-thu-tháng)
+  - [Theo Tháng](#doanh-thu-tháng)
+* [Platform](#app-platform)
+  - [App](#app-platform)
 
 ## BaseUrl
 
@@ -429,5 +431,27 @@
         "Charge": 136873
     },
     ...
+]
+```
+
+## App Platform
+#### Giao thức: POST
+```http
+/api/platform/app
+```
+#### Input (JSON)
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `Bearer Token (Header)`      | `string` | **Jwt**|
+| `PhoneNumber`      | `string` | **Số điện thoại (không bao gồm số "0"), độ dài 9 ký tự**|
+
+#### Output
+```
+[
+    {
+        "SubsId": 908168644,
+        "Dichvu": "Platform_Amnhac",
+        "SoNgayActive": 43
+    }
 ]
 ```
