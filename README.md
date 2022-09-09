@@ -5,6 +5,7 @@
 * [BaseUrl](#BaseUrl)
 * [Xác thực](#đăng-nhập)
   - [Đăng nhập](#đăng-nhập)
+  - [Kiểm tra Access Token](#kiểm-tra-access-token)
   - [RefreshToken](#refreshtoken)
 * [Lấy danh sách thuê bao](#lấy-danh-sách-thuê-bao)
 * [Thông tin thuê bao](#lấy-thông-tin-thuê-bao-từ-qlkh)
@@ -53,6 +54,30 @@
 
 - Tại môi trường Dev: 
   - Sử dụng **Password** mặc định để đăng nhập: **mbf8@2022**
+
+## Kiểm tra Access Token
+#### Giao thức: POST
+```http
+  /api/account/check-access-token
+```
+#### 
+#### Input (JSON)
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `AccessToken` | `string` | **Access Token lấy được từ Login API trước đó**|
+
+#### Output
+<details>
+  <summary>Hiển thị</summary>
+  
+```
+{
+    "Status": "Ok",
+    "UserName": "vinh.np"
+}
+```
+  
+</details>
 
 ## RefreshToken
 #### Giao thức: POST
