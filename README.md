@@ -56,7 +56,7 @@
 #### Lưu ý: 
 
 - Tại môi trường Dev: 
-  - Sử dụng **Password** mặc định để đăng nhập: **mbf8@2022**
+  - Sử dụng **Password** mặc định để đăng nhập: **Được cung cấp bởi MobiFone**
 
 ## Kiểm tra Access Token
 #### Giao thức: POST
