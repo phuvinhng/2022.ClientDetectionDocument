@@ -13,6 +13,7 @@
   - [Từ phân hệ CRM](#lấy-thông-tin-thuê-bao-từ-crm)
   - [Số dư](#số-dư)
   - [Các gói cước đang sử dụng](#các-gói-cước-đang-sử-dụng)
+  - [Tư vấn gói cước](#tư-vấn-gói-cước)
 * [Lịch sử](#lịch-sử-nạp-tiền)
   - [Nạp tiền](#lịch-sử-nạp-tiền)
   - [Khiếu Nại](#lịch-sử-khiếu-nại)
@@ -440,6 +441,35 @@
 ```
 {
     "Packages": "D15"
+}
+```
+  
+</details>
+
+## Tư vấn gói cước
+#### Giao thức: POST
+```http
+  /api/information/recommend-package
+```
+#### Input (JSON)
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `Bearer Token (Header)`      | `string` | **Jwt**|
+| `PhoneNumber`      | `string` | **Số điện thoại (không bao gồm số "0"), độ dài 9 ký tự**|
+
+#### Lưu ý: 
+
+- Số thuê bao tại CRM có thể có dữ liệu hoặc không: 
+  - Nếu có dữ liệu sẽ lấy được **các gói cước có thể tư vấn** 
+  - Nếu không sẽ trả về empty
+
+#### Output
+<details>
+  <summary>Hiển thị</summary>
+  
+```
+{
+    "Packages": "8E,8P,CK30,CK50,CK70,ED100,ED50"
 }
 ```
   
