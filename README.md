@@ -398,6 +398,12 @@
 | `Bearer Token (Header)`      | `string` | **Jwt**|
 | `PhoneNumber`      | `string` | **Số điện thoại (không bao gồm số "0"), độ dài 9 ký tự**|
 
+#### Lưu ý: 
+
+- Số thuê bao tại CRM có thể có dữ liệu hoặc không: 
+  - Nếu có dữ liệu sẽ lấy được **số dư** 
+  - Nếu không sẽ trả về số dư là **0**
+
 #### Output
 <details>
   <summary>Hiển thị</summary>
@@ -420,6 +426,12 @@
 | :-------- | :------- | :-------------------------------- |
 | `Bearer Token (Header)`      | `string` | **Jwt**|
 | `PhoneNumber`      | `string` | **Số điện thoại (không bao gồm số "0"), độ dài 9 ký tự**|
+
+#### Lưu ý: 
+
+- Số thuê bao tại CRM có thể có dữ liệu hoặc không: 
+  - Nếu có dữ liệu sẽ lấy được **các gói cước** 
+  - Nếu không sẽ trả về empty
 
 #### Output
 <details>
