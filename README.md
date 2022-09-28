@@ -11,6 +11,8 @@
 * [Thông tin thuê bao](#lấy-thông-tin-thuê-bao-từ-qlkh)
   - [Từ phân hệ QLKH](#lấy-thông-tin-thuê-bao-từ-qlkh)
   - [Từ phân hệ CRM](#lấy-thông-tin-thuê-bao-từ-crm)
+  - [Số dư](#số-dư)
+  - [Các gói cước đang sử dụng](#các-gói-cước-đang-sử-dụng)
 * [Lịch sử](#lịch-sử-nạp-tiền)
   - [Nạp tiền](#lịch-sử-nạp-tiền)
   - [Khiếu Nại](#lịch-sử-khiếu-nại)
@@ -377,6 +379,52 @@
     "Custom000854": "",
     "Custom000855": "",
     "Custom000868": "DNBH68M4BC"
+}
+```
+  
+</details>
+
+## Số dư
+#### Giao thức: POST
+```http
+  /api/information/balance
+```
+#### Input (JSON)
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `Bearer Token (Header)`      | `string` | **Jwt**|
+| `PhoneNumber`      | `string` | **Số điện thoại (không bao gồm số "0"), độ dài 9 ký tự**|
+
+#### Output
+<details>
+  <summary>Hiển thị</summary>
+  
+```
+{
+    "Balance": "0"
+}
+```
+  
+</details>
+
+## Các gói cước đang sử dụng
+#### Giao thức: POST
+```http
+  /api/information/using-package
+```
+#### Input (JSON)
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `Bearer Token (Header)`      | `string` | **Jwt**|
+| `PhoneNumber`      | `string` | **Số điện thoại (không bao gồm số "0"), độ dài 9 ký tự**|
+
+#### Output
+<details>
+  <summary>Hiển thị</summary>
+  
+```
+{
+    "Packages": "D15"
 }
 ```
   
