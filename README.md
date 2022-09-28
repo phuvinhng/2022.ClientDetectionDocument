@@ -16,6 +16,9 @@
 * [Lịch sử](#lịch-sử-nạp-tiền)
   - [Nạp tiền](#lịch-sử-nạp-tiền)
   - [Khiếu Nại](#lịch-sử-khiếu-nại)
+  - [MNP - chuyển mạng](#lịch-sử-mnp)
+  - [Quà tặng](#lịch-sử-quà-tặng)
+  - [Tương tác 3 tháng gần nhất](#lịch-sử-tương-tác)
 * [Doanh thu](#doanh-thu-tháng)
   - [Theo Tháng](#doanh-thu-tháng)
 * [Platform](#app-platform)
@@ -55,7 +58,7 @@
 #### Lưu ý: 
 
 - Tại môi trường Dev: 
-  - Sử dụng **Password** mặc định để đăng nhập: **mbf8@2022**
+  - Sử dụng **Password** mặc định để đăng nhập: **Được cung cấp bởi MobiFone**
 
 ## Kiểm tra Access Token
 #### Giao thức: POST
@@ -504,6 +507,170 @@
   
 </details>
 
+## Lịch sử MNP
+#### Giao thức: POST
+```http
+/api/history/mnp
+```
+#### Input (JSON)
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `Bearer Token (Header)`      | `string` | **Jwt**|
+| `PhoneNumber`      | `string` | **Số điện thoại (không bao gồm số "0"), độ dài 9 ký tự**|
+
+#### Output
+<details>
+  <summary>Hiển thị</summary>
+  
+```
+[
+    {
+        "MnpRegistrationId": 5341317,
+        "RegInfDate": "2022-09-09T15:14:47",
+        "TimerDescription": "Thời gian hết hạn timer: 12/09/2022 14:14:47",
+        "TrangThaiChuyenMang": "Hoàn tất chuyển",
+        "NhaMang": "Vinaphone",
+        "LoaiChuyenMang": "Chuyển mạng đi",
+        "TrangThaiChuyenMangCu": "Mở/Cắt trên tổng đài",
+        "TrangThaiThanhcong": "Thành công"
+    },
+    {
+        "MnpRegistrationId": 5268712,
+        "RegInfDate": "2022-07-22T09:43:54",
+        "TimerDescription": "Thời gian hết hạn timer: 25/07/2022 08:43:54",
+        "TrangThaiChuyenMang": "Hủy không đủ điều kiện",
+        "NhaMang": "Vinaphone",
+        "LoaiChuyenMang": "Chuyển mạng đi",
+        "TrangThaiChuyenMangCu": "Không đủ điều kiện",
+        "TrangThaiThanhcong": "Chưa thành công"
+    },
+    {
+        "MnpRegistrationId": 5334970,
+        "RegInfDate": "2022-09-06T09:27:21",
+        "TimerDescription": "",
+        "TrangThaiChuyenMang": "Hủy không đủ điều kiện",
+        "NhaMang": "Vinaphone",
+        "LoaiChuyenMang": "Chuyển mạng đi",
+        "TrangThaiChuyenMangCu": "Không đủ điều kiện",
+        "TrangThaiThanhcong": "Chưa thành công"
+    },
+    {
+        "MnpRegistrationId": 5277514,
+        "RegInfDate": "2022-07-27T18:08:20",
+        "TimerDescription": "Thời gian hết hạn timer: 28/07/2022 16:00:20",
+        "TrangThaiChuyenMang": "Hủy không đủ điều kiện",
+        "NhaMang": "Vinaphone",
+        "LoaiChuyenMang": "Chuyển mạng đi",
+        "TrangThaiChuyenMangCu": "Không đủ điều kiện",
+        "TrangThaiThanhcong": "Chưa thành công"
+    },
+    {
+        "MnpRegistrationId": 5273928,
+        "RegInfDate": "2022-07-26T10:39:09",
+        "TimerDescription": "Thời gian hết hạn timer: 27/07/2022 09:39:09",
+        "TrangThaiChuyenMang": "Hủy không đủ điều kiện",
+        "NhaMang": "Vinaphone",
+        "LoaiChuyenMang": "Chuyển mạng đi",
+        "TrangThaiChuyenMangCu": "Không đủ điều kiện",
+        "TrangThaiThanhcong": "Chưa thành công"
+    },
+    {
+        "MnpRegistrationId": 5271563,
+        "RegInfDate": "2022-07-25T11:03:08",
+        "TimerDescription": "Thời gian hết hạn timer: 26/07/2022 10:03:08",
+        "TrangThaiChuyenMang": "Hủy không đủ điều kiện",
+        "NhaMang": "Vinaphone",
+        "LoaiChuyenMang": "Chuyển mạng đi",
+        "TrangThaiChuyenMangCu": "Không đủ điều kiện",
+        "TrangThaiThanhcong": "Chưa thành công"
+    }
+]
+```
+  
+</details>
+
+## Lịch sử quà tặng
+#### Giao thức: POST
+```http
+/api/history/qua-tang
+```
+#### Input (JSON)
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `Bearer Token (Header)`      | `string` | **Jwt**|
+| `PhoneNumber`      | `string` | **Số điện thoại (không bao gồm số "0"), độ dài 9 ký tự**|
+
+#### Output
+<details>
+  <summary>Hiển thị</summary>
+  
+```
+[
+    {
+        "Year": 2022,
+        "ChuongTrinh": "Quà Sinh nhật KNDL",
+        "HanChonQua": "2022-07-14T00:00:00",
+        "QuaDaChon": "Đèn LED để bàn thông minh Baseus",
+        "TrangThai": "Đã nhận"
+    },
+    {
+        "Year": 2021,
+        "ChuongTrinh": "Quà Sinh nhật KNDL",
+        "HanChonQua": "2021-07-14T00:00:00",
+        "QuaDaChon": "Bộ đồ ăn Minh Long",
+        "TrangThai": "Đã nhận"
+    },
+    {
+        "Year": 2020,
+        "ChuongTrinh": "Quà Sinh nhật KNDL",
+        "HanChonQua": "2020-07-15T00:00:00",
+        "QuaDaChon": "",
+        "TrangThai": "Chưa nhận"
+    },
+    {
+        "Year": 2019,
+        "ChuongTrinh": "Quà Sinh nhật KNDL",
+        "HanChonQua": "2019-07-14T00:00:00",
+        "QuaDaChon": "Máy xay sinh tố Philip",
+        "TrangThai": "Đã nhận"
+    },
+    {
+        "Year": 2018,
+        "ChuongTrinh": "Quà Sinh nhật KNDL",
+        "HanChonQua": "2018-07-14T00:00:00",
+        "QuaDaChon": "",
+        "TrangThai": "Chưa nhận"
+    }
+]
+```
+  
+</details>
+
+## Lịch sử tương tác
+#### Giao thức: POST
+```http
+/api/history/three-months-trace
+```
+#### Input (JSON)
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `Bearer Token (Header)`      | `string` | **Jwt**|
+| `PhoneNumber`      | `string` | **Số điện thoại (không bao gồm số "0"), độ dài 9 ký tự**|
+
+#### Output
+<details>
+  <summary>Hiển thị</summary>
+  
+```
+[
+    {
+        "IssueDatetime": "2022-09-12T14:56:18",
+        "Description": "Huy thue bao 788289363 mstrHLRIN = 11 va huy SIM 452019960930253, giữ lại AUC"
+    }
+]
+```
+  
+</details>
 
 ## Doanh thu Tháng
 #### Giao thức: POST
