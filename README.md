@@ -14,6 +14,7 @@
   - [Số dư](#số-dư)
   - [Các gói cước đang sử dụng](#các-gói-cước-đang-sử-dụng)
   - [Tư vấn gói cước](#tư-vấn-gói-cước)
+  - [Khuyến nghị số thuê bao](#khuyến-nghị-số-thuê-bao)
 * [Lịch sử](#lịch-sử-nạp-tiền)
   - [Nạp tiền](#lịch-sử-nạp-tiền)
   - [Khiếu Nại](#lịch-sử-khiếu-nại)
@@ -470,6 +471,49 @@
 ```
 {
     "Packages": "8E,8P,CK30,CK50,CK70,ED100,ED50"
+}
+```
+  
+</details>
+
+## Khuyến nghị số thuê bao
+#### Giao thức: POST
+```http
+  /api/information/suggest-phone-number
+```
+#### Input (JSON)
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `Bearer Token (Header)`      | `string` | **Jwt**|
+| `PhoneNumber`      | `string` | **Số điện thoại (không bao gồm số "0"), độ dài 9 ký tự**|
+
+#### Output
+<details>
+  <summary>Hiển thị</summary>
+  
+```
+{
+    "Message": "Số thuê bao khuyến nghị sử dụng",
+    "PhoneNumbers": [
+        {
+            "TelNumber": "786030483"
+        },
+        {
+            "TelNumber": "785946488"
+        },
+        {
+            "TelNumber": "797946488"
+        },
+        {
+            "TelNumber": "786046488"
+        },
+        {
+            "TelNumber": "786346488"
+        },
+        {
+            "TelNumber": "798546488"
+        }
+    ]
 }
 ```
   
