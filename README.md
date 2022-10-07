@@ -524,6 +524,7 @@
 #### Giao thức: POST
 
 - Lịch sử nạp tiền 3 tháng gần nhất
+- Với n (tháng hiện tại), n-1 (tháng trước đó), ...
 
 ```http
 /api/history/nap-tien
