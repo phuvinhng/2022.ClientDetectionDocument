@@ -17,6 +17,7 @@
   - [Khuyến nghị số thuê bao](#khuyến-nghị-số-thuê-bao)
 * [Lịch sử](#lịch-sử-nạp-tiền)
   - [Nạp tiền](#lịch-sử-nạp-tiền)
+  - [Sử dụng gói cước](#sử-dụng-gói-cước)
   - [Khiếu Nại](#lịch-sử-khiếu-nại)
   - [MNP - chuyển mạng](#lịch-sử-mnp)
   - [Quà tặng](#lịch-sử-quà-tặng)
@@ -523,6 +524,45 @@
 #### Giao thức: POST
 ```http
 /api/history/nap-tien
+```
+#### Input (JSON)
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `Bearer Token (Header)`      | `string` | **Jwt**|
+| `PhoneNumber`      | `string` | **Số điện thoại (không bao gồm số "0"), độ dài 9 ký tự**|
+
+#### Lưu ý
+
+- Vì dữ liệu được lấy từ CRM nên một vài số thuê bao có thể sẽ không có dữ liệu
+  - Nếu không có dữ liệu sẽ trả về danh sách rỗng **[]**
+
+#### Output
+<details>
+  <summary>Hiển thị</summary>
+  
+```
+[
+    {
+        "N": "0"
+    },
+    {
+        "N-1": "200000"
+    },
+    {
+        "N-2": "200000"
+    },
+    {
+        "N-3": "0"
+    }
+]
+```
+  
+</details>
+
+## Sử dụng gói cước
+#### Giao thức: POST
+```http
+/api/history/su-dung-goi
 ```
 #### Input (JSON)
 | Parameter | Type     | Description                       |
