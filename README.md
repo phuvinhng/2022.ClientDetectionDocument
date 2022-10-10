@@ -1,31 +1,33 @@
-
 # API NHẬN DIỆN KHÁCH HÀNG
 
 ## Nội dung
-* [BaseUrl](#BaseUrl)
-* [Xác thực](#đăng-nhập)
+
+- [BaseUrl](#BaseUrl)
+- [Xác thực](#đăng-nhập)
   - [Đăng nhập](#đăng-nhập)
   - [Kiểm tra Access Token](#kiểm-tra-access-token)
   - [RefreshToken](#refreshtoken)
-* [Lấy danh sách thuê bao](#lấy-danh-sách-thuê-bao)
-* [Thông tin thuê bao](#lấy-thông-tin-thuê-bao-từ-qlkh)
+- [Lấy danh sách thuê bao](#lấy-danh-sách-thuê-bao)
+- [Thông tin thuê bao](#lấy-thông-tin-thuê-bao-từ-qlkh)
   - [Từ phân hệ QLKH](#lấy-thông-tin-thuê-bao-từ-qlkh)
   - [Từ phân hệ CRM](#lấy-thông-tin-thuê-bao-từ-crm)
   - [Số dư](#số-dư)
   - [Các gói cước đang sử dụng](#các-gói-cước-đang-sử-dụng)
   - [Tư vấn gói cước](#tư-vấn-gói-cước)
   - [Khuyến nghị số thuê bao](#khuyến-nghị-số-thuê-bao)
-* [Lịch sử](#lịch-sử-nạp-tiền)
+- [Lịch sử](#lịch-sử-nạp-tiền)
   - [Nạp tiền](#lịch-sử-nạp-tiền)
   - [Sử dụng gói cước](#sử-dụng-gói-cước)
   - [Khiếu Nại](#lịch-sử-khiếu-nại)
   - [MNP - chuyển mạng](#lịch-sử-mnp)
   - [Quà tặng](#lịch-sử-quà-tặng)
   - [Tương tác 3 tháng gần nhất](#lịch-sử-tương-tác)
-* [Doanh thu](#doanh-thu-tháng)
+- [Doanh thu](#doanh-thu-tháng)
   - [Theo Tháng](#doanh-thu-tháng)
-* [Platform](#app-platform)
+- [Platform](#app-platform)
   - [App](#app-platform)
+- [Khách hàng](#hành-vi-khách-hàng)
+  - [Hành vi khách hàng](#hành-vi-khách-hàng)
 
 ## BaseUrl
 
@@ -34,17 +36,22 @@
 ```
 
 ## Đăng nhập
+
 #### Giao thức: POST
+
 ```http
   /api/account/authen
 ```
+
 #### Input (JSON)
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `Username` | `string` | **Tên đăng nhập**|
-| `Password` | `string` | **Mật khẩu**|
+
+| Parameter  | Type     | Description       |
+| :--------- | :------- | :---------------- |
+| `Username` | `string` | **Tên đăng nhập** |
+| `Password` | `string` | **Mật khẩu**      |
 
 #### Output
+
 <details>
   <summary>Hiển thị</summary>
   
@@ -58,23 +65,29 @@
   
 </details>
 
-#### Lưu ý: 
+#### Lưu ý:
 
-- Tại môi trường Dev: 
+- Tại môi trường Dev:
   - Sử dụng **Password** mặc định để đăng nhập: **Được cung cấp bởi MobiFone**
 
 ## Kiểm tra Access Token
+
 #### Giao thức: POST
+
 ```http
   /api/account/check-access-token
 ```
-#### 
+
+####
+
 #### Input (JSON)
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `AccessToken` | `string` | **Access Token lấy được từ Login API trước đó**|
+
+| Parameter     | Type     | Description                                     |
+| :------------ | :------- | :---------------------------------------------- |
+| `AccessToken` | `string` | **Access Token lấy được từ Login API trước đó** |
 
 #### Output
+
 <details>
   <summary>Hiển thị</summary>
   
@@ -88,17 +101,23 @@
 </details>
 
 ## RefreshToken
+
 #### Giao thức: POST
+
 ```http
   /api/account/refresh-token
 ```
-#### 
+
+####
+
 #### Input (JSON)
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `RefreshToken` | `string` | **Refresh Token lấy được từ Login API trước đó**|
+
+| Parameter      | Type     | Description                                      |
+| :------------- | :------- | :----------------------------------------------- |
+| `RefreshToken` | `string` | **Refresh Token lấy được từ Login API trước đó** |
 
 #### Output
+
 <details>
   <summary>Hiển thị</summary>
   
@@ -113,18 +132,22 @@
 </details>
 
 ## Lấy danh sách thuê bao
+
 #### Giao thức: POST
+
 ```http
   /api/Isdn/GetListISDN
 ```
 
 #### Input (JSON)
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `Bearer Token (Header)`      | `string` | **Jwt**|
-| `Identity`      | `string` | **Số CMND hoặc CCCD**|
+
+| Parameter               | Type     | Description           |
+| :---------------------- | :------- | :-------------------- |
+| `Bearer Token (Header)` | `string` | **Jwt**               |
+| `Identity`              | `string` | **Số CMND hoặc CCCD** |
 
 #### Output
+
 <details>
   <summary>Hiển thị</summary>
   
@@ -154,19 +177,23 @@
   
 </details>
 
-
 ## Lấy thông tin thuê bao từ QLKH
+
 #### Giao thức: POST
+
 ```http
   /api/information/qlkh
 ```
+
 #### Input (JSON)
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `Bearer Token (Header)`      | `string` | **Jwt**|
-| `PhoneNumber`      | `string` | **Số điện thoại (không bao gồm số "0"), độ dài 9 ký tự**|
+
+| Parameter               | Type     | Description                                              |
+| :---------------------- | :------- | :------------------------------------------------------- |
+| `Bearer Token (Header)` | `string` | **Jwt**                                                  |
+| `PhoneNumber`           | `string` | **Số điện thoại (không bao gồm số "0"), độ dài 9 ký tự** |
 
 #### Output
+
 <details>
   <summary>Hiển thị</summary>
   
@@ -186,19 +213,23 @@
   
 </details>
 
-
 ## Lấy thông tin thuê bao từ CRM
+
 #### Giao thức: POST
+
 ```http
   /api/information/crm
 ```
+
 #### Input (JSON)
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `Bearer Token (Header)`      | `string` | **Jwt**|
-| `PhoneNumber`      | `string` | **Số điện thoại (không bao gồm số "0"), độ dài 9 ký tự**|
+
+| Parameter               | Type     | Description                                              |
+| :---------------------- | :------- | :------------------------------------------------------- |
+| `Bearer Token (Header)` | `string` | **Jwt**                                                  |
+| `PhoneNumber`           | `string` | **Số điện thoại (không bao gồm số "0"), độ dài 9 ký tự** |
 
 #### Output
+
 <details>
   <summary>Hiển thị</summary>
   
@@ -391,23 +422,28 @@
 </details>
 
 ## Số dư
+
 #### Giao thức: POST
+
 ```http
   /api/information/balance
 ```
+
 #### Input (JSON)
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `Bearer Token (Header)`      | `string` | **Jwt**|
-| `PhoneNumber`      | `string` | **Số điện thoại (không bao gồm số "0"), độ dài 9 ký tự**|
 
-#### Lưu ý: 
+| Parameter               | Type     | Description                                              |
+| :---------------------- | :------- | :------------------------------------------------------- |
+| `Bearer Token (Header)` | `string` | **Jwt**                                                  |
+| `PhoneNumber`           | `string` | **Số điện thoại (không bao gồm số "0"), độ dài 9 ký tự** |
 
-- Số thuê bao tại CRM có thể có dữ liệu hoặc không: 
-  - Nếu có dữ liệu sẽ lấy được **số dư** 
+#### Lưu ý:
+
+- Số thuê bao tại CRM có thể có dữ liệu hoặc không:
+  - Nếu có dữ liệu sẽ lấy được **số dư**
   - Nếu không sẽ trả về số dư là **0**
 
 #### Output
+
 <details>
   <summary>Hiển thị</summary>
   
@@ -420,23 +456,28 @@
 </details>
 
 ## Các gói cước đang sử dụng
+
 #### Giao thức: POST
+
 ```http
   /api/information/using-package
 ```
+
 #### Input (JSON)
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `Bearer Token (Header)`      | `string` | **Jwt**|
-| `PhoneNumber`      | `string` | **Số điện thoại (không bao gồm số "0"), độ dài 9 ký tự**|
 
-#### Lưu ý: 
+| Parameter               | Type     | Description                                              |
+| :---------------------- | :------- | :------------------------------------------------------- |
+| `Bearer Token (Header)` | `string` | **Jwt**                                                  |
+| `PhoneNumber`           | `string` | **Số điện thoại (không bao gồm số "0"), độ dài 9 ký tự** |
 
-- Số thuê bao tại CRM có thể có dữ liệu hoặc không: 
-  - Nếu có dữ liệu sẽ lấy được **các gói cước** 
+#### Lưu ý:
+
+- Số thuê bao tại CRM có thể có dữ liệu hoặc không:
+  - Nếu có dữ liệu sẽ lấy được **các gói cước**
   - Nếu không sẽ trả về empty
 
 #### Output
+
 <details>
   <summary>Hiển thị</summary>
   
@@ -449,23 +490,28 @@
 </details>
 
 ## Tư vấn gói cước
+
 #### Giao thức: POST
+
 ```http
   /api/information/recommend-package
 ```
+
 #### Input (JSON)
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `Bearer Token (Header)`      | `string` | **Jwt**|
-| `PhoneNumber`      | `string` | **Số điện thoại (không bao gồm số "0"), độ dài 9 ký tự**|
 
-#### Lưu ý: 
+| Parameter               | Type     | Description                                              |
+| :---------------------- | :------- | :------------------------------------------------------- |
+| `Bearer Token (Header)` | `string` | **Jwt**                                                  |
+| `PhoneNumber`           | `string` | **Số điện thoại (không bao gồm số "0"), độ dài 9 ký tự** |
 
-- Số thuê bao tại CRM có thể có dữ liệu hoặc không: 
-  - Nếu có dữ liệu sẽ lấy được **các gói cước có thể tư vấn** 
+#### Lưu ý:
+
+- Số thuê bao tại CRM có thể có dữ liệu hoặc không:
+  - Nếu có dữ liệu sẽ lấy được **các gói cước có thể tư vấn**
   - Nếu không sẽ trả về empty
 
 #### Output
+
 <details>
   <summary>Hiển thị</summary>
   
@@ -478,17 +524,22 @@
 </details>
 
 ## Khuyến nghị số thuê bao
+
 #### Giao thức: POST
+
 ```http
   /api/information/suggest-phone-number
 ```
+
 #### Input (JSON)
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `Bearer Token (Header)`      | `string` | **Jwt**|
-| `PhoneNumber`      | `string` | **Số điện thoại (không bao gồm số "0"), độ dài 9 ký tự**|
+
+| Parameter               | Type     | Description                                              |
+| :---------------------- | :------- | :------------------------------------------------------- |
+| `Bearer Token (Header)` | `string` | **Jwt**                                                  |
+| `PhoneNumber`           | `string` | **Số điện thoại (không bao gồm số "0"), độ dài 9 ký tự** |
 
 #### Output
+
 <details>
   <summary>Hiển thị</summary>
   
@@ -521,6 +572,7 @@
 </details>
 
 ## Lịch sử nạp tiền
+
 #### Giao thức: POST
 
 - Lịch sử nạp tiền 3 tháng gần nhất
@@ -529,11 +581,13 @@
 ```http
 /api/history/nap-tien
 ```
+
 #### Input (JSON)
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `Bearer Token (Header)`      | `string` | **Jwt**|
-| `PhoneNumber`      | `string` | **Số điện thoại (không bao gồm số "0"), độ dài 9 ký tự**|
+
+| Parameter               | Type     | Description                                              |
+| :---------------------- | :------- | :------------------------------------------------------- |
+| `Bearer Token (Header)` | `string` | **Jwt**                                                  |
+| `PhoneNumber`           | `string` | **Số điện thoại (không bao gồm số "0"), độ dài 9 ký tự** |
 
 #### Lưu ý
 
@@ -541,22 +595,27 @@
   - Nếu không có dữ liệu sẽ trả về danh sách rỗng **[]**
 
 #### Output
+
 <details>
   <summary>Hiển thị</summary>
   
 ```
 [
     {
-        "N": "0"
+        "Title": "Tháng 10",
+        "Charge": "0"
     },
     {
-        "N-1": "200000"
+        "Title": "Tháng 9",
+        "Charge": "0"
     },
     {
-        "N-2": "200000"
+        "Title": "Tháng 8",
+        "Charge": "0"
     },
     {
-        "N-3": "0"
+        "Title": "Tháng 7",
+        "Charge": "0"
     }
 ]
 ```
@@ -564,17 +623,22 @@
 </details>
 
 ## Sử dụng gói cước
+
 #### Giao thức: POST
+
 ```http
 /api/history/su-dung-goi
 ```
+
 #### Input (JSON)
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `Bearer Token (Header)`      | `string` | **Jwt**|
-| `PhoneNumber`      | `string` | **Số điện thoại (không bao gồm số "0"), độ dài 9 ký tự**|
+
+| Parameter               | Type     | Description                                              |
+| :---------------------- | :------- | :------------------------------------------------------- |
+| `Bearer Token (Header)` | `string` | **Jwt**                                                  |
+| `PhoneNumber`           | `string` | **Số điện thoại (không bao gồm số "0"), độ dài 9 ký tự** |
 
 #### Output
+
 <details>
   <summary>Hiển thị</summary>
   
@@ -604,19 +668,23 @@
   
 </details>
 
-
 ## Lịch sử khiếu nại
+
 #### Giao thức: POST
+
 ```http
 /api/history/khieu-nai
 ```
+
 #### Input (JSON)
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `Bearer Token (Header)`      | `string` | **Jwt**|
-| `PhoneNumber`      | `string` | **Số điện thoại (không bao gồm số "0"), độ dài 9 ký tự**|
+
+| Parameter               | Type     | Description                                              |
+| :---------------------- | :------- | :------------------------------------------------------- |
+| `Bearer Token (Header)` | `string` | **Jwt**                                                  |
+| `PhoneNumber`           | `string` | **Số điện thoại (không bao gồm số "0"), độ dài 9 ký tự** |
 
 #### Output
+
 <details>
   <summary>Hiển thị</summary>
   
@@ -638,17 +706,22 @@
 </details>
 
 ## Lịch sử MNP
+
 #### Giao thức: POST
+
 ```http
 /api/history/mnp
 ```
+
 #### Input (JSON)
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `Bearer Token (Header)`      | `string` | **Jwt**|
-| `PhoneNumber`      | `string` | **Số điện thoại (không bao gồm số "0"), độ dài 9 ký tự**|
+
+| Parameter               | Type     | Description                                              |
+| :---------------------- | :------- | :------------------------------------------------------- |
+| `Bearer Token (Header)` | `string` | **Jwt**                                                  |
+| `PhoneNumber`           | `string` | **Số điện thoại (không bao gồm số "0"), độ dài 9 ký tự** |
 
 #### Output
+
 <details>
   <summary>Hiển thị</summary>
   
@@ -720,17 +793,22 @@
 </details>
 
 ## Lịch sử quà tặng
+
 #### Giao thức: POST
+
 ```http
 /api/history/qua-tang
 ```
+
 #### Input (JSON)
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `Bearer Token (Header)`      | `string` | **Jwt**|
-| `PhoneNumber`      | `string` | **Số điện thoại (không bao gồm số "0"), độ dài 9 ký tự**|
+
+| Parameter               | Type     | Description                                              |
+| :---------------------- | :------- | :------------------------------------------------------- |
+| `Bearer Token (Header)` | `string` | **Jwt**                                                  |
+| `PhoneNumber`           | `string` | **Số điện thoại (không bao gồm số "0"), độ dài 9 ký tự** |
 
 #### Output
+
 <details>
   <summary>Hiển thị</summary>
   
@@ -777,17 +855,22 @@
 </details>
 
 ## Lịch sử tương tác
+
 #### Giao thức: POST
+
 ```http
 /api/history/three-months-trace
 ```
+
 #### Input (JSON)
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `Bearer Token (Header)`      | `string` | **Jwt**|
-| `PhoneNumber`      | `string` | **Số điện thoại (không bao gồm số "0"), độ dài 9 ký tự**|
+
+| Parameter               | Type     | Description                                              |
+| :---------------------- | :------- | :------------------------------------------------------- |
+| `Bearer Token (Header)` | `string` | **Jwt**                                                  |
+| `PhoneNumber`           | `string` | **Số điện thoại (không bao gồm số "0"), độ dài 9 ký tự** |
 
 #### Output
+
 <details>
   <summary>Hiển thị</summary>
   
@@ -803,17 +886,22 @@
 </details>
 
 ## Doanh thu Tháng
+
 #### Giao thức: POST
+
 ```http
 /api/revenue/monthly
 ```
+
 #### Input (JSON)
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `Bearer Token (Header)`      | `string` | **Jwt**|
-| `PhoneNumber`      | `string` | **Số điện thoại (không bao gồm số "0"), độ dài 9 ký tự**|
+
+| Parameter               | Type     | Description                                              |
+| :---------------------- | :------- | :------------------------------------------------------- |
+| `Bearer Token (Header)` | `string` | **Jwt**                                                  |
+| `PhoneNumber`           | `string` | **Số điện thoại (không bao gồm số "0"), độ dài 9 ký tự** |
 
 #### Output
+
 <details>
   <summary>Hiển thị</summary>
   
@@ -835,19 +923,23 @@
   
 </details>
 
-
 ## App Platform
+
 #### Giao thức: POST
+
 ```http
 /api/platform/app
 ```
+
 #### Input (JSON)
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `Bearer Token (Header)`      | `string` | **Jwt**|
-| `PhoneNumber`      | `string` | **Số điện thoại (không bao gồm số "0"), độ dài 9 ký tự**|
+
+| Parameter               | Type     | Description                                              |
+| :---------------------- | :------- | :------------------------------------------------------- |
+| `Bearer Token (Header)` | `string` | **Jwt**                                                  |
+| `PhoneNumber`           | `string` | **Số điện thoại (không bao gồm số "0"), độ dài 9 ký tự** |
 
 #### Output
+
 <details>
   <summary>Hiển thị</summary>
   
@@ -864,3 +956,31 @@
   
 </details>
 
+## Hành vi khách hàng
+
+#### Giao thức: POST
+
+```http
+/api/customer/behaviors
+```
+
+#### Input (JSON)
+
+| Parameter               | Type     | Description                                              |
+| :---------------------- | :------- | :------------------------------------------------------- |
+| `Bearer Token (Header)` | `string` | **Jwt**                                                  |
+| `PhoneNumber`           | `string` | **Số điện thoại (không bao gồm số "0"), độ dài 9 ký tự** |
+
+#### Output
+
+<details>
+  <summary>Hiển thị</summary>
+  
+```
+{
+    "Behaviors": "zalo,truyen"
+}
+```
+#### Lưu ý: Nếu không có dữ liệu sẽ trả về "Behaviors":""
+  
+</details>
