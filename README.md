@@ -603,19 +603,23 @@
 [
     {
         "Title": "Tháng 10",
-        "Charge": "0"
+        "Charge": "0",
+        "Code": "n"
     },
     {
         "Title": "Tháng 9",
-        "Charge": "0"
+        "Charge": "0",
+        "Code": "n-1"
     },
     {
         "Title": "Tháng 8",
-        "Charge": "0"
+        "Charge": "0",
+        "Code": "n-2"
     },
     {
         "Title": "Tháng 7",
-        "Charge": "0"
+        "Charge": "0",
+        "Code": "n-3"
     }
 ]
 ```
