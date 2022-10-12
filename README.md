@@ -29,7 +29,7 @@
 - [Khách hàng](#hành-vi-khách-hàng)
   - [Hành vi khách hàng](#hành-vi-khách-hàng)
 - [Tiện ích](#tiện-ích)
-  - [Gửi tin nhắn cho khách hàng VIP](#tiện-ích)
+  - [Gửi tin nhắn thông báo khi có khách hàng VIP](#tiện-ích)
 
 ## BaseUrl
 
@@ -993,6 +993,8 @@
 
 ## Tiện ích
 
+## Gửi tin nhắn thông báo khi có khách hàng VIP
+
 #### Giao thức: POST
 
 ```http
@@ -1010,7 +1012,9 @@
 
 #### Lưu ý
 
-- **PhoneNumber** là số điện thoại cần được nhận tin nhắn
+- **PhoneNumber** là số điện thoại cần được nhận tin nhắn, thông thường là số điện thoại của Cửa hàng trưởng
+- Sử dụng API này nếu xác định được danh tính của khách hàng là khách hàng VIP
+- Flow: Nhận diện khách hàng -> Xác định được là khách hàng VIP -> Gửi tin nhắn cho cửa hàng trưởng
 
 #### Output
 
