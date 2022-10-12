@@ -28,6 +28,8 @@
   - [App](#app-platform)
 - [Khách hàng](#hành-vi-khách-hàng)
   - [Hành vi khách hàng](#hành-vi-khách-hàng)
+- [Tiện ích](#tiện-ích)
+  - [Gửi tin nhắn cho khách hàng VIP](#tiện-ích)
 
 ## BaseUrl
 
@@ -986,5 +988,39 @@
 }
 ```
 #### Lưu ý: Nếu không có dữ liệu sẽ trả về "Behaviors":""
+  
+</details>
+
+## Tiện ích
+
+#### Giao thức: POST
+
+```http
+/api/customer/send-sms-vip
+```
+
+#### Input (JSON)
+
+| Parameter               | Type     | Description                                              |
+| :---------------------- | :------- | :------------------------------------------------------- |
+| `Bearer Token (Header)` | `string` | **Jwt**                                                  |
+| `PhoneNumber`           | `string` | **Số điện thoại (không bao gồm số "0"), độ dài 9 ký tự** |
+| `CustomerName`          | `string` | **Họ và tên của khách hàng VIP**                         |
+| `CustomerPhoneNumber`   | `string` | **Số điện thoại của khách hàng VIP (bao gồm cả số "0")** |
+
+#### Lưu ý
+
+- **PhoneNumber** là số điện thoại cần được nhận tin nhắn
+
+#### Output
+
+<details>
+  <summary>Hiển thị</summary>
+  
+```
+{
+    "Message": "Gửi tin nhắn thành công"
+}
+```
   
 </details>
