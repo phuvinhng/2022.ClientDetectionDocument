@@ -30,6 +30,8 @@
   - [Hành vi khách hàng](#hành-vi-khách-hàng)
 - [Tiện ích](#tiện-ích)
   - [Gửi tin nhắn thông báo khi có khách hàng VIP](#tiện-ích)
+  - [Gửi tin nhắn sms](#gửi-tin-nhắn-sms)
+  - [Gửi email](#gửi-email)
 
 ## BaseUrl
 
@@ -1024,6 +1026,92 @@
 ```
 {
     "Message": "Gửi tin nhắn thành công"
+}
+```
+  
+</details>
+
+## Gửi tin nhắn SMS
+
+#### Giao thức: POST
+
+```http
+/api/sms/eonesms-9293-send
+```
+
+#### Input (JSON)
+
+| Parameter               | Type           | Description                                                    |
+| :---------------------- | :------------- | :------------------------------------------------------------- |
+| `Bearer Token (Header)` | `string`       | **Jwt**                                                        |
+| `ListPhoneNumber`       | `List<string>` | **Danh sách số điện thoại cần gửi tin nhắn, không vượt quá 5** |
+| `Content`               | `string`       | **Nội dung tin nhắn cần gửi, không vượt quá 360 ký tự**        |
+
+<details>
+  <summary>Hiển thị</summary>
+  
+```
+{
+    "ListPhoneNumber": ["0798249898"],
+    "Content": "Dữ liệu test Nhan dien khach hang EoneSms"
+}
+```
+  
+</details>
+
+#### Output (JSON)
+
+<details>
+  <summary>Hiển thị</summary>
+  
+```
+{
+    "Code": "0",
+    "Message": "Gửi tin nhắn thành công bằng eOneSms"
+}
+```
+  
+</details>
+
+## Gửi email
+
+#### Giao thức: POST
+
+```http
+/api/email/send
+```
+
+#### Input (JSON)
+
+| Parameter               | Type           | Description                                   |
+| :---------------------- | :------------- | :-------------------------------------------- |
+| `Bearer Token (Header)` | `string`       | **Jwt**                                       |
+| `ListEmail`             | `List<string>` | **Danh sách email cần gửi, không vượt quá 5** |
+| `Title`                 | `string`       | **Tiêu đề email**                             |
+| `Content`               | `string`       | **Nội dung email**                            |
+
+<details>
+  <summary>Hiển thị</summary>
+  
+```
+{
+    "ListEmail": ["vinh.np@mobifone.vn"],
+    "Title": "Dữ liệu test Nhan dien khach hang EoneSms",
+    "Content": "<p style='color: red;'>Dữ liệu test Nhan dien khach hang EoneSms</p>"
+}
+```
+  
+</details>
+
+#### Output (JSON)
+
+<details>
+  <summary>Hiển thị</summary>
+  
+```
+{
+    "Code": "0",
+    "Message": "Gửi Email thành công"
 }
 ```
   
