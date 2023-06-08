@@ -30,8 +30,8 @@
   - [Hành vi khách hàng](#hành-vi-khách-hàng)
 - [Tiện ích](#tiện-ích)
   - [Gửi tin nhắn thông báo khi có khách hàng VIP](#tiện-ích)
-  - [Gửi tin nhắn sms](#gửi-tin-nhắn-sms)
-  - [Gửi email](#gửi-email)
+  - [Gửi tin nhắn SMS](#gửi-tin-nhắn-sms)
+  - [Gửi Email](#gửi-email)
 
 ## BaseUrl
 
@@ -1073,7 +1073,7 @@
   
 </details>
 
-## Gửi email
+## Gửi Email
 
 #### Giao thức: POST
 
