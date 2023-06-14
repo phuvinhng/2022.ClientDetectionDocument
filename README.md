@@ -1311,8 +1311,47 @@
             "ProvinceCode": "BTH",
             "Month": "1",
             "Value": 10000
+        },
+        {
+            "ProvinceCode": "TNI",
+            "Month": "1",
+            "Value": 10000
+        },
+        {
+            "ProvinceCode": "LDO",
+            "Month": "1",
+            "Value": 10000
+        },
+        {
+            "ProvinceCode": "LAN",
+            "Month": "1",
+            "Value": 10000
+        },
+        {
+            "ProvinceCode": "BDU",
+            "Month": "1",
+            "Value": 10000
+        },
+        {
+            "ProvinceCode": "BPH",
+            "Month": "1",
+            "Value": 10000
+        },
+        {
+            "ProvinceCode": "BRV",
+            "Month": "1",
+            "Value": 10000
+        },
+        {
+            "ProvinceCode": "NTH",
+            "Month": "1",
+            "Value": 10000
+        },
+        {
+            "ProvinceCode": "KHCN",
+            "Month": "1",
+            "Value": 10000
         }
-        ...
     ]
 }
 ```
