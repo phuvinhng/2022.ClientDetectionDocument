@@ -33,6 +33,12 @@
   - [Gửi tin nhắn SMS](#gửi-tin-nhắn-sms)
   - [Gửi Email](#gửi-email)
 
+## Phân hệ Quản lý cửa hàng
+
+- [Báo cáo](#báo-cáo)
+  - [Báo cáo doanh thu thương mại bán lẻ](#báo-cáo-doanh-thu-thương-mại-bán-lẻ)
+  - [Import Báo cáo doanh thu thương mại bán lẻ](#import-báo-cáo-doanh-thu-thương-mại-bán-lẻ)
+
 ## BaseUrl
 
 ```http
@@ -1112,6 +1118,230 @@
 {
     "Code": "0",
     "Message": "Gửi Email thành công"
+}
+```
+  
+</details>
+
+## Báo cáo Doanh thu thương mại bán lẻ
+
+#### Giao thức: POST
+
+```http
+/api/report/doanhthu-thuongmai-phanphoi-banle
+```
+
+#### Input (JSON)
+
+| Parameter               | Type     | Description                     |
+| :---------------------- | :------- | :------------------------------ |
+| `Bearer Token (Header)` | `string` | **Jwt**                         |
+| `ProvinceCode`          | `string` | **Mã Tỉnh**                     |
+| `FromDate`              | `string` | **Từ ngày, Ví dụ: 01/01/2023**  |
+| `ToDate`                | `string` | **Đến ngày, Ví dụ: 01/06/2023** |
+
+#### Lưu ý
+
+- Mã tỉnh được định nghĩa như sau:
+  - DNI: Tỉnh Đồng Nai
+  - BTH: Tỉnh Bình Thuận
+  - BDU: Tỉnh Bình Dương
+  - BPH: Tỉnh Bình Phước
+  - LDO: Tỉnh Lâm Đồng
+  - TNI: Tỉnh Tây Ninh
+  - LAN: Tỉnh Long An
+  - NTH: Tỉnh Ninh Thuận
+  - BRV: Tỉnh Bà Rịa - Vũng Tàu
+
+<details>
+  <summary>Hiển thị</summary>
+
+```
+{
+    "ProvinceCode": "123",
+    "FromDate": "01/01/2023",
+    "ToDate": "01/06/2023"
+}
+```
+
+</details>
+
+#### Output (JSON)
+
+<details>
+  <summary>Hiển thị</summary>
+  
+```
+{
+    "Code": "0",
+    "Message": "Lấy dữ liệu thành công",
+    "Data": [
+        {
+            "Stt": 1,
+            "Mbft": "Bình Dương",
+            "Kehoach": 31734,
+            "Thuchien": 22892,
+            "ConlaiThuchien": 8842,
+            "TyleHoanthanh": "72.14%"
+        },
+        {
+            "Stt": 2,
+            "Mbft": "Bà Rịa-Vũng Tàu",
+            "Kehoach": 19320,
+            "Thuchien": 13905,
+            "ConlaiThuchien": 5415,
+            "TyleHoanthanh": "71.97%"
+        },
+        {
+            "Stt": 3,
+            "Mbft": "Bình Phước",
+            "Kehoach": 5076,
+            "Thuchien": 3031,
+            "ConlaiThuchien": 2045,
+            "TyleHoanthanh": "59.71%"
+        },
+        {
+            "Stt": 4,
+            "Mbft": "Bình Thuận",
+            "Kehoach": 9564,
+            "Thuchien": 6918,
+            "ConlaiThuchien": 2646,
+            "TyleHoanthanh": "72.33%"
+        },
+        {
+            "Stt": 5,
+            "Mbft": "Long An ",
+            "Kehoach": 9942,
+            "Thuchien": 7593,
+            "ConlaiThuchien": 2349,
+            "TyleHoanthanh": "76.37%"
+        },
+        {
+            "Stt": 6,
+            "Mbft": "Ninh Thuận",
+            "Kehoach": 11319,
+            "Thuchien": 7245,
+            "ConlaiThuchien": 4074,
+            "TyleHoanthanh": "64.01%"
+        },
+        {
+            "Stt": 7,
+            "Mbft": "Đồng Nai",
+            "Kehoach": 17289,
+            "Thuchien": 12466,
+            "ConlaiThuchien": 4823,
+            "TyleHoanthanh": "72.1%"
+        },
+        {
+            "Stt": 8,
+            "Mbft": "Lâm Đồng",
+            "Kehoach": 9513,
+            "Thuchien": 6592,
+            "ConlaiThuchien": 2921,
+            "TyleHoanthanh": "69.29%"
+        },
+        {
+            "Stt": 9,
+            "Mbft": "Tây Ninh",
+            "Kehoach": 11601,
+            "Thuchien": 7531,
+            "ConlaiThuchien": 4070,
+            "TyleHoanthanh": "64.92%"
+        },
+        {
+            "Stt": 10,
+            "Mbft": "KHCN",
+            "Kehoach": 199344,
+            "Thuchien": "",
+            "ConlaiThuchien": "",
+            "TyleHoanthanh": "%"
+        },
+        {
+            "Stt": 11,
+            "Mbft": "TONG",
+            "Kehoach": 324702,
+            "Thuchien": 88173,
+            "ConlaiThuchien": 236529,
+            "TyleHoanthanh": "27.16%"
+        }
+    ]
+}
+```
+  
+</details>
+
+## Import Báo cáo Doanh thu thương mại bán lẻ
+
+#### Giao thức: POST
+
+```http
+/api/report/import-doanhthu-thuongmai-phanphoi-banle
+```
+
+#### Input (JSON)
+
+| Parameter               | Type           | Description                                         |
+| :---------------------- | :------------- | :-------------------------------------------------- |
+| `Bearer Token (Header)` | `string`       | **Jwt**                                             |
+| `Year`                  | `string`       | **Năm**                                             |
+| `ImportBy`              | `string`       | **Tên đăng nhập của người dùng thực hiện thao tác** |
+| `Details`               | `List<object>` | **Danh sách chi tiết**                              |
+
+#### Details (JSON)
+
+| Parameter      | Type      | Description                              |
+| :------------- | :-------- | :--------------------------------------- |
+| `ProvinceCode` | `string`  | **Mã Tỉnh**                              |
+| `Month`        | `int`     | **Tháng**                                |
+| `Value`        | `decimal` | **Doanh thu tính theo đơn vị triệu VNĐ** |
+
+#### Lưu ý
+
+- Mã tỉnh được định nghĩa như sau:
+  - DNI: Tỉnh Đồng Nai
+  - BTH: Tỉnh Bình Thuận
+  - BDU: Tỉnh Bình Dương
+  - BPH: Tỉnh Bình Phước
+  - LDO: Tỉnh Lâm Đồng
+  - TNI: Tỉnh Tây Ninh
+  - LAN: Tỉnh Long An
+  - NTH: Tỉnh Ninh Thuận
+  - BRV: Tỉnh Bà Rịa - Vũng Tàu
+
+<details>
+  <summary>Hiển thị</summary>
+
+```
+{
+    "Year": "2023",
+    "ImportBy": "VINH.NP",
+    "Details": [
+        {
+            "ProvinceCode": "DNI",
+            "Month": "1",
+            "Value": 10000
+        },
+        {
+            "ProvinceCode": "BTH",
+            "Month": "1",
+            "Value": 10000
+        }
+        ...
+    ]
+}
+```
+
+</details>
+
+#### Output (JSON)
+
+<details>
+  <summary>Hiển thị</summary>
+  
+```
+{
+    "Code": "0",
+    "Message": "Import dữ liệu thành công"
 }
 ```
   
