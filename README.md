@@ -1136,22 +1136,8 @@
 | Parameter               | Type     | Description                     |
 | :---------------------- | :------- | :------------------------------ |
 | `Bearer Token (Header)` | `string` | **Jwt**                         |
-| `ProvinceCode`          | `string` | **Mã Tỉnh**                     |
 | `FromDate`              | `string` | **Từ ngày, Ví dụ: 01/01/2023**  |
 | `ToDate`                | `string` | **Đến ngày, Ví dụ: 01/06/2023** |
-
-#### Lưu ý
-
-- Mã tỉnh được định nghĩa như sau:
-  - DNI: Tỉnh Đồng Nai
-  - BTH: Tỉnh Bình Thuận
-  - BDU: Tỉnh Bình Dương
-  - BPH: Tỉnh Bình Phước
-  - LDO: Tỉnh Lâm Đồng
-  - TNI: Tỉnh Tây Ninh
-  - LAN: Tỉnh Long An
-  - NTH: Tỉnh Ninh Thuận
-  - BRV: Tỉnh Bà Rịa - Vũng Tàu
 
 <details>
   <summary>Hiển thị</summary>
@@ -1307,6 +1293,7 @@
   - LAN: Tỉnh Long An
   - NTH: Tỉnh Ninh Thuận
   - BRV: Tỉnh Bà Rịa - Vũng Tàu
+  - KHCN: Phòng Khách hàng Cá nhân
 
 <details>
   <summary>Hiển thị</summary>
